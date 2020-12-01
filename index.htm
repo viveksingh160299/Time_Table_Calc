@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+
+<html ng-app="app" ng-controller="controller">
+
+<head>
+
+<title>Time Table Calculator</title>
+
+<script src="js/angular.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-cookies.js"></script>
+<script src="js/Controller.js"></script>
+<link rel="stylesheet" href="Style/style.css" />
+
+</head>
+
+<body  ng-style="getBgImgObj()" ng-init="Getcookies()">
+
+<div class="image1">
+
+<p id="coursecode"> Enter Course Code  </p>
+
+<input type="search" id="searchbar" name="search" placeholder="CS202, CS202, IC300, EE507" size="100" required/>
+<input type="button" id="searchbutton" value="Submit" ng-click="dev()" />
+<br> <br>
+
+<input type="button" value="#" ng-click="toggle('-1')"  id="B"/>
+<input type="button" value="Monday" ng-click="toggle('0')" id="B1"/>
+<input type="button" value="Tuesday" ng-click="toggle('1')" id="B2"/>
+<input type="button" value="Wednesday" ng-click="toggle('2')" id="B3"/>
+<input type="button" value="Thursday" ng-click="toggle('3')" id="B4"/>
+<input type="button" value="Friday" ng-click="toggle('4')" id="B5"/>
+<br> <br>
+
+<div class="transform" id="A1">
+   <input type="button" class="T" value="8:30-9:50" />  <br>
+   <input type="button" class="T" value="10:00-11:20"/>  <br>
+   <input type="button" class="T" value="11:30-12:50"/>  <br>
+   <input type="button" class="T" value="1:00-2:20"/>  <br>
+   <input type="button" class="T" value="2:30-3:50"/>  <br>
+   <input type="button" class="T" value="4:00-5:20"/>
+</div>
+
+<div class="transform" ng-if="val[0]" id="A2">
+   <input type="button" class="T" value={{monday[0]}} />  <br>
+   <input type="button" class="T" value={{monday[1]}} />  <br>
+   <input type="button" class="T" value={{monday[2]}} />  <br>
+   <input type="button" class="T" value={{monday[3]}} />  <br>
+   <input type="button" class="T" value={{monday[4]}} />  <br>
+   <input type="button" class="T" value={{monday[5]}} />
+</div>
+
+
+<div class="transform" ng-if="val[1]" id="A3">
+   <input type="button" class="T" value={{tuesday[0]}} />  <br>
+   <input type="button" class="T" value={{tuesday[1]}} />  <br>
+   <input type="button" class="T" value={{tuesday[2]}} />  <br>
+   <input type="button" class="T" value={{tuesday[3]}} />  <br>
+   <input type="button" class="T" value={{tuesday[4]}} />  <br>
+   <input type="button" class="T" value={{tuesday[5]}} />
+</div>
+
+
+<div class="transform" ng-if="val[2]" id="A4">
+   <input type="button" class="T" value={{wednesday[0]}} />  <br>
+   <input type="button" class="T" value={{wednesday[1]}} />  <br>
+   <input type="button" class="T" value={{wednesday[2]}} />  <br>
+   <input type="button" class="T" value={{wednesday[3]}} />  <br>
+   <input type="button" class="T" value={{wednesday[4]}} />  <br>
+   <input type="button" class="T" value={{wednesday[5]}} />
+</div>
+
+
+<div class="transform" ng-if="val[3]" id="A5">
+   <input type="button" class="T" value={{thursday[0]}} />  <br>
+   <input type="button" class="T" value={{thursday[1]}} />  <br>
+   <input type="button" class="T" value={{thursday[2]}} />  <br>
+   <input type="button" class="T" value={{thursday[3]}} />  <br>
+   <input type="button" class="T" value={{thursday[4]}} />  <br>
+   <input type="button" class="T" value={{thursday[5]}} />
+</div>
+
+
+<div class="transform" ng-if="val[4]" id="A6">
+   <input type="button" class="T" value={{friday[0]}} />  <br>
+   <input type="button" class="T" value={{friday[1]}} />  <br>
+   <input type="button" class="T" value={{friday[2]}} />  <br>
+   <input type="button" class="T" value={{friday[3]}} />  <br>
+   <input type="button" class="T" value={{friday[4]}} />  <br>
+   <input type="button" class="T" value={{friday[5]}} />
+</div>
+
+
+</div>
+</body>
+</html>

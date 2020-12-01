@@ -1,0 +1,175 @@
+@import compass
+
+:root{
+    --a: 0%;
+    --b: 0%;
+    --c: 0%;
+    --d: 0%;
+    --h: 0px;
+}
+
+
+body{
+  position:relative;
+  font-family: georgia,helvetica,sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body::before{
+    content: "";
+    background-image: url("backimage.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.7;
+    z-index: 0;
+
+}
+
+#coursecode{
+     position:relative;
+    margin-left: 20%;
+    margin-top: 5vmax ;
+    font-style: normal;
+    font-variant: small-caps;
+    font-size: 3.5vmax;
+    font-weight: bold;
+    text-decoration: underline ;
+    color: black;
+}
+
+#searchbar{
+     position:relative;
+  margin-left: 20%;
+  height: 6.5vw;
+  margin-top: 3vw ;
+  width: 45%;
+  font-size: 3.1vw;
+  margin-top: 0% ;
+  border: 2px solid black;
+}
+
+#searchbutton{
+     position:relative;
+   color: black;
+   background: white;
+   height: 6.5vw;
+   width: 15%;
+   font-size: 3.3vw;
+   margin-left: 2%;
+   transform;
+}
+
+#searchbutton:active{
+    position:relative;
+    background-color: greenyellow;
+    -webkit-animation: active 300ms ease 1;
+}
+
+
+#B{
+ margin-left: 5%;
+}
+
+#B, #B1, #B2, #B3, #B4, #B5{
+     position:relative;
+  height: 4vmax;
+  font-family: georgia,helvetica,sans-serif;
+  font-weight: bold;
+  background-color: white;
+  text-align: centre;
+  padding: 0.7%;
+  margin-top: 6vmax;
+  width:14.95%;
+  border: 1px solid black;
+  float: left;
+  font-size: 2vw;
+  border-radius: 10%;
+  transform;
+  margin-bottom: 7vmax;
+}
+
+
+#B:active, #B1:active, #B2:active, #B3:active, #B4:active, #B5:active{
+     position:relative;
+    background-color: darkorange;
+   -webkit-animation: active 300ms ease 1;
+}
+
+
+@-webkit-keyframes active{
+    0% {transform: scale(1,1);}
+    90% {transform: scale(.9,.68);}
+    100% {transform: scale(.92,.9);}
+}
+
+#A1{
+   margin-left: 5.6%;
+ }
+
+ #A2{
+   margin-left: 0%;
+ }
+
+ #A3{
+   margin-left: var(--a);
+ }
+
+ #A4{
+   margin-left: var(--b);
+ }
+
+ #A5{
+   margin-left: var(--c);
+ }
+
+ #A6{
+   margin-left: var(--d);
+ }
+
+
+.T{
+      position:relative;
+    border: 0.1px solid black;
+    margin-bottom: 7vmax;
+    background-color:  darkorange;
+    color: black;
+    height: 5vmax;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: centre;
+    padding: 0.7%;
+    font-size: 1.5vw;
+    border-radius: 15%;
+    width: 90%;
+}
+
+#A1, #A2, #A3, #A4, #A5, #A6{
+     position:relative;
+     float: left;
+     width: 15%;
+}
+
+.transform.ng-enter {
+     position:relative;
+    transition: .7s all;
+    opacity: 0;
+}
+
+.transform.ng-enter.ng-enter-active {
+     position:relative;
+    opacity: 1;
+}
+
+>
