@@ -196,6 +196,12 @@ var code,ind=0;
                while(j<res.length)
                {
                    var t1=false,t2=false,t3=true;
+                
+                   if(res[j][0]=='N'&&res[j][1]=='A')
+                       {
+                         return res[j];
+                       }
+
 
                    for(var u=0; u<res[j].length;u++)
                    {
@@ -488,6 +494,9 @@ $scope.Setcookies = function(stg){
 
                   var i1=0;
                   while(i1<result.length){
+                   
+                  if(result[i1][0]=='N'&&result[i1][1]=='A')
+                    break;
 
                   letter_1=result[i1][0];
                   if(i1===0)
