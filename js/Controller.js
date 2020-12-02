@@ -176,7 +176,7 @@ function getcode(str){
 var letternumber = /^[0-9a-zA-Z]+$/;
 var valq="";
 var res=[];
-var code,ind=0;
+var code,ind=0; 
 
 
     for(var ui=0; ui<ch.length;ui++)
@@ -196,12 +196,11 @@ var code,ind=0;
                while(j<res.length)
                {
                    var t1=false,t2=false,t3=true;
-                
-                   if(res[j][0]=='N'&&res[j][1]=='A')
+                 
+                     if(res[j][0]=='N'&&res[j][1]=='A')
                        {
                          return res[j];
                        }
-
 
                    for(var u=0; u<res[j].length;u++)
                    {
@@ -230,6 +229,7 @@ var code,ind=0;
                }
            }
            i++;
+         
        }
 
 
@@ -494,7 +494,7 @@ $scope.Setcookies = function(stg){
 
                   var i1=0;
                   while(i1<result.length){
-                   
+                    
                   if(result[i1][0]=='N'&&result[i1][1]=='A')
                     break;
 
@@ -689,6 +689,10 @@ $scope.Setcookies = function(stg){
 
 
 });
+
+
+
+
 
 
 
