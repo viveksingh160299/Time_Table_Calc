@@ -58,6 +58,7 @@ body::before{
   font-size: 3.1vw;
   margin-top: 0% ;
   border: 2px solid black;
+   border-radius: 3.2vw;
 }
 
 #searchbutton{
@@ -68,6 +69,7 @@ body::before{
    width: 15%;
    font-size: 3.3vw;
    margin-left: 2%;
+   border-radius: 3vw;
    transform;
 }
 
@@ -95,13 +97,13 @@ body::before{
   border: 1px solid black;
   float: left;
   font-size: 2vw;
-  border-radius: 10%;
+  border-radius: 2.5vw;
   transform;
   margin-bottom: 7vmax;
 }
 
 
-#B:active, #B1:active, #B2:active, #B3:active, #B4:active, #B5:active{
+#B:active,.T:active, #B1:active, #B2:active, #B3:active, #B4:active, #B5:active{
      position:relative;
     background-color: darkorange;
    -webkit-animation: active 300ms ease 1;
@@ -110,7 +112,7 @@ body::before{
 
 @-webkit-keyframes active{
     0% {transform: scale(1,1);}
-    90% {transform: scale(.9,.68);}
+    70% {transform: scale(.9,.5);}
     100% {transform: scale(.92,.9);}
 }
 
@@ -139,7 +141,7 @@ body::before{
  }
 
 
-.T{
+.T, .TT{
       position:relative;
     border: 0.1px solid black;
     margin-bottom: 7vmax;
@@ -151,7 +153,7 @@ body::before{
     text-align: centre;
     padding: 0.7%;
     font-size: 1.5vw;
-    border-radius: 15%;
+    border-radius: 3vw;
     width: 90%;
 }
 
@@ -171,5 +173,3 @@ body::before{
      position:relative;
     opacity: 1;
 }
-
->
