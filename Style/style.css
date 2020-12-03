@@ -97,7 +97,7 @@ body::before{
   border: 1px solid black;
   float: left;
   font-size: 2vw;
-  border-radius: 5vw;
+  border-radius: 7vw;
   transform;
   margin-bottom: 7vmax;
 }
