@@ -161,6 +161,14 @@ function ($scope, $http, $cookies, $window){
     $scope.wednesday=['----', '----', '----', '----', '----', '----'];
     $scope.thursday=['----', '----', '----', '----', '----', '----'];
     $scope.friday=['----', '----', '----', '----', '----', '----'];
+  
+    $scope.alpha=[
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', '']
+    ];
 
     $scope.val=[0, 0, 0, 0, 0];
     $scope.value=0;
@@ -223,6 +231,7 @@ var code,ind=0;
                    if(t1 && t2 && t3)
                    {
                        i=res.length;
+                       valq= valq + res[j];
                        break;
                    }
                    j++;
@@ -255,11 +264,7 @@ var code,ind=0;
     if(t1 && t2 && t3)
     {
        valq= valq + res[j] + ',' + res[j+1];
-    }
-
-    else
-    {
-       valq= valq + res[j];
+     
     }
 
     return valq;
@@ -384,7 +389,64 @@ var t1=false,t2=false,t3=false, t4=false,x,y;
     };
 /*----------------------------------------------------------------------------------------*/
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+/*------------------------Function to check if courses clash or not-----------------------*/
+$scope.clash = function(abc){
 
+    var  code_list=abc.split(' ');
+    var i,j;
+  
+    for(i=0;i<code_list.length;i++)
+      {
+        for(j=i+1;j<code_list.length;j++)
+          {
+            if(code_list[i][0]<=code_list[j][0] && code_list[i][1]>=code_list[j][0] )
+              return 0;
+            if(code_list[i][0]<=code_list[j][1] && code_list[i][1]>=code_list[j][0] )
+              return 0;
+          }
+      }
+  
+    return 1;
+} 
+  
+/*----------------------------------------------------------------------------------------*/   
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+/*---------------Function to show complete courses in the clicked button------------------*/
+ $scope.show_it = function(abc){
+
+ var aa1=parseInt(abc[0]);
+ var aa2=parseInt(abc[1]);
+   
+ if($scope.alpha[aa1][aa2].length>20)  
+   alert($scope.alpha[aa1][aa2]);  
+   
+} 
+  
+/*----------------------------------------------------------------------------------------*/ 
+
+  
+  
+  
 
 
 
@@ -450,6 +512,21 @@ $scope.Setcookies = function(stg){
       $scope.thursday=['----', '----', '----', '----', '----', '----'];
       $scope.friday=['----', '----', '----', '----', '----', '----'];
 
+      $scope.alpha=[
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', '']
+    ];
+        
+      $scope.beta=[
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', ''],
+                  ['', '', '', '', '', '']
+    ];
 
 
 
@@ -516,12 +593,15 @@ $scope.Setcookies = function(stg){
 
                        if( $scope.monday_1[o]==letter_1 || $scope.monday_2[o]==letter_1 )
                        {
+                         if(i1===0)
+                          $scope.beta[0][o]+=letter_second_last + letter_last + ' ';
+                         
                           var compae=$scope.monday[o][0];
                           if(compae!='-')
                           {
                               var remain=$scope.monday[o].substr(0,5);
 
-                              if($scope.monday[o][$scope.monday[o].length-3]>letter_last || $scope.monday[o][$scope.monday[o].length-2]<letter_second_last )
+                              if($scope.clash($scope.beta[0][o]) === 1)
                                {
                                     $scope.monday[o]=remain + ', ' + entered_value[i];
                                }
@@ -537,6 +617,9 @@ $scope.Setcookies = function(stg){
                           }
                           else
                                $scope.monday[o]=entered_value[i] + '(' + letter_second_last + letter_last + ')';
+                         
+                          $scope.alpha[0][o]+=entered_value[i] + '(' + letter_second_last + letter_last + ')           ';
+                          
 
                        }
 
@@ -544,12 +627,15 @@ $scope.Setcookies = function(stg){
 
                        if( $scope.tuesday_1[o]==letter_1 || $scope.tuesday_2[o]==letter_1 )
                        {
+                         if(i1===0)
+                          $scope.beta[1][o]+=letter_second_last + letter_last + ' ';
+                         
                           var compae=$scope.tuesday[o][0];
                           if(compae!='-')
                           {
                               var remain=$scope.tuesday[o].substr(0,5);
 
-                              if($scope.tuesday[o][$scope.tuesday[o].length-3]>letter_last || $scope.tuesday[o][$scope.tuesday[o].length-2]<letter_second_last )
+                              if($scope.clash($scope.beta[1][o]) === 1)
                                {
                                     $scope.tuesday[o]=remain + ', ' + entered_value[i];
                                }
@@ -565,7 +651,10 @@ $scope.Setcookies = function(stg){
                           }
                           else
                                $scope.tuesday[o]=entered_value[i] + '(' + letter_second_last + letter_last + ')';
-
+                         
+                         $scope.alpha[1][o]+=entered_value[i] + '(' + letter_second_last + letter_last + ')       ';
+                         
+                         
                        }
 
 
@@ -573,12 +662,15 @@ $scope.Setcookies = function(stg){
 
                        if( $scope.wednesday_1[o]==letter_1 || $scope.wednesday_2[o]==letter_1 )
                        {
+                         if(i1===0)
+                          $scope.beta[2][o]+=letter_second_last + letter_last + ' ';
+                         
                           var compae=$scope.wednesday[o][0];
                           if(compae!='-')
                           {
                               var remain=$scope.wednesday[o].substr(0,5);
 
-                              if($scope.wednesday[o][$scope.wednesday[o].length-2]<letter_last || $scope.wednesday[o][$scope.wednesday[o].length-3]>letter_second_last )
+                              if($scope.clash($scope.beta[2][o]) === 1)
                                {
                                     $scope.wednesday[o]=remain + ', ' + entered_value[i];
                                }
@@ -594,7 +686,9 @@ $scope.Setcookies = function(stg){
                           }
                           else
                                $scope.wednesday[o]=entered_value[i] + '(' + letter_second_last + letter_last + ')';
-
+                         
+                         $scope.alpha[2][o]+=entered_value[i] + '(' + letter_second_last + letter_last + ')       ';
+                        
 
                        }
 
@@ -603,12 +697,15 @@ $scope.Setcookies = function(stg){
 
                        if( $scope.thursday_1[o]==letter_1 || $scope.thursday_2[o]==letter_1 )
                        {
-                         var compae=$scope.thursday[o][0];
+                         if(i1===0)
+                          $scope.beta[3][o]+=letter_second_last + letter_last + ' ';
+                        
+                          var compae=$scope.thursday[o][0];
                           if(compae!='-')
                           {
                               var remain=$scope.thursday[o].substr(0,5);
 
-                              if($scope.thursday[o][$scope.thursday[o].length-2]<letter_last || $scope.thursday[o][$scope.thursday[o].length-3]>letter_second_last )
+                              if($scope.clash($scope.beta[3][o]) === 1)
                                {
                                     $scope.thursday[o]=remain + ', ' + entered_value[i];
                                }
@@ -625,18 +722,23 @@ $scope.Setcookies = function(stg){
                           else
                                $scope.thursday[o]=entered_value[i] + '(' + letter_second_last + letter_last + ')';
 
+                         $scope.alpha[3][o]+=entered_value[i] + '(' + letter_second_last + letter_last + ')       ';
+                         
 
                           }
 
 
                        if( $scope.friday_1[o]==letter_1 || $scope.friday_2[o]==letter_1 )
                        {
+                         if(i1===0)
+                         $scope.beta[4][o]+=letter_second_last + letter_last + ' ';
+                         
                          var compae=$scope.friday[o][0];
                           if(compae!='-')
                           {
                               var remain=$scope.friday[o].substr(0,5);
 
-                              if($scope.friday[o][$scope.friday[o].length-2]<letter_last || $scope.friday[o][$scope.friday[o].length-3]>letter_second_last )
+                              if($scope.clash($scope.beta[4][o]) === 1 )
                                {
                                     $scope.friday[o]=remain + ', ' + entered_value[i];
                                }
@@ -652,6 +754,9 @@ $scope.Setcookies = function(stg){
                           }
                           else
                                $scope.friday[o]=entered_value[i] + '(' + letter_second_last + letter_last + ')';
+                         
+                          $scope.alpha[4][o]+=entered_value[i] + '(' + letter_second_last + letter_last + ')       ';
+                         
 
                        }
 
@@ -689,10 +794,6 @@ $scope.Setcookies = function(stg){
 
 
 });
-
-
-
-
 
 
 
