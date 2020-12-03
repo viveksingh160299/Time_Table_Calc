@@ -86,7 +86,7 @@ body::before{
 
 #B, #B1, #B2, #B3, #B4, #B5{
      position:relative;
-  height: 4vmax;
+  height: 6.5vw;
   font-family: georgia,helvetica,sans-serif;
   font-weight: bold;
   background-color: white;
@@ -147,7 +147,7 @@ body::before{
     margin-bottom: 7vmax;
     background-color:  darkorange;
     color: black;
-    height: 5vmax;
+    height: 6.5vw;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: centre;
