@@ -6,11 +6,9 @@
 
 <title>Time Table Calculator</title>
 
-<script src="js/angular.min.js"></script>
-<script src="js/angular-animate.min.js"></script>
-<script src="js/angular-cookies.js"></script>
-<script src="js/Controller.js"></script>
-<link rel="stylesheet" href="Style/style.css" />
+<script src="https://code.angularjs.org/1.8.0/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.8.0/angular-animate.min.js"></script>
+<script src="https://code.angularjs.org/1.8.0/angular-cookies.js"></script>
 
 </head>
 
@@ -24,7 +22,7 @@
 <input type="button" id="searchbutton" value="Submit" ng-click="dev()" />
 <br> <br>
 
-<input type="button" value="Press me" ng-click="toggle('-1')"  id="B"/>
+<input type="button" value="Click me" ng-click="toggle('-1')"  id="B"/>
 <input type="button" value="Monday" ng-click="toggle('0')" id="B1"/>
 <input type="button" value="Tuesday" ng-click="toggle('1')" id="B2"/>
 <input type="button" value="Wednesday" ng-click="toggle('2')" id="B3"/>
@@ -33,61 +31,61 @@
 <br> <br>
 
 <div class="transform" id="A1">
-   <input type="button" class="T" value="8:30-9:50" />  <br>
-   <input type="button" class="T" value="10:00-11:20"/>  <br>
-   <input type="button" class="T" value="11:30-12:50"/>  <br>
-   <input type="button" class="T" value="1:00-2:20"/>  <br>
-   <input type="button" class="T" value="2:30-3:50"/>  <br>
-   <input type="button" class="T" value="4:00-5:20"/>
+   <input type="button" class="TT" value="8:30-9:50" />  <br>
+   <input type="button" class="TT" value="10:00-11:20"/>  <br>
+   <input type="button" class="TT" value="11:30-12:50"/>  <br>
+   <input type="button" class="TT" value="1:00-2:20"/>  <br>
+   <input type="button" class="TT" value="2:30-3:50"/>  <br>
+   <input type="button" class="TT" value="4:00-5:20"/>
 </div>
 
 <div class="transform" ng-if="val[0]" id="A2">
-   <input type="button" class="T" value={{monday[0]}} />  <br>
-   <input type="button" class="T" value={{monday[1]}} />  <br>
-   <input type="button" class="T" value={{monday[2]}} />  <br>
-   <input type="button" class="T" value={{monday[3]}} />  <br>
-   <input type="button" class="T" value={{monday[4]}} />  <br>
-   <input type="button" class="T" value={{monday[5]}} />
+   <input type="button" class="T" value={{monday[0]}}  ng-click="show_it('00')"/>  <br>
+   <input type="button" class="T" value={{monday[1]}}  ng-click="show_it('01')"/>  <br>
+   <input type="button" class="T" value={{monday[2]}}  ng-click="show_it('02')"/>  <br>
+   <input type="button" class="T" value={{monday[3]}}  ng-click="show_it('03')"/>  <br>
+   <input type="button" class="T" value={{monday[4]}}  ng-click="show_it('04')"/>  <br>
+   <input type="button" class="T" value={{monday[5]}}  ng-click="show_it('05')"/>
 </div>
 
 
 <div class="transform" ng-if="val[1]" id="A3">
-   <input type="button" class="T" value={{tuesday[0]}} />  <br>
-   <input type="button" class="T" value={{tuesday[1]}} />  <br>
-   <input type="button" class="T" value={{tuesday[2]}} />  <br>
-   <input type="button" class="T" value={{tuesday[3]}} />  <br>
-   <input type="button" class="T" value={{tuesday[4]}} />  <br>
-   <input type="button" class="T" value={{tuesday[5]}} />
+   <input type="button" class="T" value={{tuesday[0]}} ng-click="show_it('10')"/>  <br>
+   <input type="button" class="T" value={{tuesday[1]}} ng-click="show_it('11')"/>  <br>
+   <input type="button" class="T" value={{tuesday[2]}} ng-click="show_it('12')"/>  <br>
+   <input type="button" class="T" value={{tuesday[3]}} ng-click="show_it('13')"/>  <br>
+   <input type="button" class="T" value={{tuesday[4]}} ng-click="show_it('14')"/>  <br>
+   <input type="button" class="T" value={{tuesday[5]}} ng-click="show_it('15')"/>
 </div>
 
 
 <div class="transform" ng-if="val[2]" id="A4">
-   <input type="button" class="T" value={{wednesday[0]}} />  <br>
-   <input type="button" class="T" value={{wednesday[1]}} />  <br>
-   <input type="button" class="T" value={{wednesday[2]}} />  <br>
-   <input type="button" class="T" value={{wednesday[3]}} />  <br>
-   <input type="button" class="T" value={{wednesday[4]}} />  <br>
-   <input type="button" class="T" value={{wednesday[5]}} />
+   <input type="button" class="T" value={{wednesday[0]}} ng-click="show_it('20')"/>  <br>
+   <input type="button" class="T" value={{wednesday[1]}} ng-click="show_it('21')"/>  <br>
+   <input type="button" class="T" value={{wednesday[2]}} ng-click="show_it('22')"/>  <br>
+   <input type="button" class="T" value={{wednesday[3]}} ng-click="show_it('23')"/>  <br>
+   <input type="button" class="T" value={{wednesday[4]}} ng-click="show_it('24')"/>  <br>
+   <input type="button" class="T" value={{wednesday[5]}} ng-click="show_it('25')"/>
 </div>
 
 
 <div class="transform" ng-if="val[3]" id="A5">
-   <input type="button" class="T" value={{thursday[0]}} />  <br>
-   <input type="button" class="T" value={{thursday[1]}} />  <br>
-   <input type="button" class="T" value={{thursday[2]}} />  <br>
-   <input type="button" class="T" value={{thursday[3]}} />  <br>
-   <input type="button" class="T" value={{thursday[4]}} />  <br>
-   <input type="button" class="T" value={{thursday[5]}} />
+   <input type="button" class="T" value={{thursday[0]}} ng-click="show_it('30')"/>  <br>
+   <input type="button" class="T" value={{thursday[1]}} ng-click="show_it('31')"/>  <br>
+   <input type="button" class="T" value={{thursday[2]}} ng-click="show_it('32')"/>  <br>
+   <input type="button" class="T" value={{thursday[3]}} ng-click="show_it('33')"/>  <br>
+   <input type="button" class="T" value={{thursday[4]}} ng-click="show_it('34')"/>  <br>
+   <input type="button" class="T" value={{thursday[5]}} ng-click="show_it('35')"/>
 </div>
 
 
 <div class="transform" ng-if="val[4]" id="A6">
-   <input type="button" class="T" value={{friday[0]}} />  <br>
-   <input type="button" class="T" value={{friday[1]}} />  <br>
-   <input type="button" class="T" value={{friday[2]}} />  <br>
-   <input type="button" class="T" value={{friday[3]}} />  <br>
-   <input type="button" class="T" value={{friday[4]}} />  <br>
-   <input type="button" class="T" value={{friday[5]}} />
+   <input type="button" class="T" value={{friday[0]}} ng-click="show_it('40')"/>  <br>
+   <input type="button" class="T" value={{friday[1]}} ng-click="show_it('41')"/>  <br>
+   <input type="button" class="T" value={{friday[2]}} ng-click="show_it('42')"/>  <br>
+   <input type="button" class="T" value={{friday[3]}} ng-click="show_it('43')"/>  <br>
+   <input type="button" class="T" value={{friday[4]}} ng-click="show_it('44')"/>  <br>
+   <input type="button" class="T" value={{friday[5]}} ng-click="show_it('45')"/>
 </div>
 
 
