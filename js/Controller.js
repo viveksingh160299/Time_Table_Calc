@@ -53,7 +53,7 @@ function ($scope, $http, $cookies, $window){
 ,'45 CY699 Project 18 NA NA DPGC CY'
 ,'46 CY795 PhD Candidacy 0 NA NA DPGC CY'
 ,'47 CY799 Thesis 24 NA NA DPGC CY'
-,'48 DS501 Information Retrieval 6 J16 https://iitbhilai.webex.com/meet/b303 Dr. Soumajit Pramanik'
+,'48 DS501 Information Retrieval 6 E16 https://iitbhilai.webex.com/meet/b303 Dr. Soumajit Pramanik'
 ,'49 EE126 EE Independent Project 1 NA NA Dr. Avishek Adhikary'
 ,'50 EE204 Analog Circuits 6 L16 https://iitbhilai.webex.com/meet/b107 Dr. Kapil Jainwal'
 ,'51 EE205 Power Engineering I 6 D16 https://iitbhilai.webex.com/meet/b302 Dr. Prashant Agnihotri'
