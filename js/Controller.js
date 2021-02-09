@@ -143,7 +143,8 @@ function ($scope, $http, $cookies, $window){
 ,'135 PH699 MSc(Project) 18 NA NA DPGC PH'
 ,'136 PH795 PhD Candidacy 0 NA NA DPGC PH'
 ,'137 PH798 Independent Study: High Energy Nuclear Physics 6 NA NA Dr. Sabyasachi Ghosh'
-,'138 PH799 Thesis (Phd) 6 to 24 NA NA DPGC PH Sr. No. Course Cade Course Name Tutors Batch Dr. Suchetan Dr. Ganapathy D TBA Dr. Suchetan Pal TBA TBA'];
+,'138 PH799 Thesis (Phd) 6 to 24 NA NA DPGC PH Sr. No. Course Cade Course Name Tutors Batch Dr. Suchetan Dr. Ganapathy D TBA Dr. Suchetan Pal TBA TBA'
+,'139 EE567 Math of Machine Learning 3 K46 https://iitbhilai.webex.com/meet/b304 Dr. Arzad Alam Kherani'];
 
 
 /*-----------------------------------------------------------------------------------------------------------*/
