@@ -68,7 +68,7 @@ function ($scope, $http, $cookies, $window){
 ,'60 EE203 Embedded Systems 4 K14 203 Prof. Santosh Biswas'
 ,'61 EE204 Analog Circuits 6 L16 107 Dr. Nikhil Chander'
 ,'62 EE205 Power Engineering-I 6 D16 203 Dr. Prashant Agnihotri'
-,'63 EE352 EE Lab 2 T14 EE Lab Dr. Sreejith T. V'
+,'63 EE352 EE Laba 2 T14 EE Lab Dr. Sreejith T. V'
 ,'64 EE353 EE Lab 2 U36 EE Lab Dr. Nitin Khanna'
 ,'65 EE371 Independent Project 2 14 NA Dr. Anil Kumar Sao'
 ,'66 EE499 Thesis 6 to 24 NA DUGC EECS'
